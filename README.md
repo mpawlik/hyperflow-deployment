@@ -11,6 +11,13 @@ Use git to download these scripts, use `--recursive` to download all dependent c
 `git clone --recursive https://github.com/malawski/hyperflow-deployment.git`
 
 
+Assumptions:
+------
+
+These scripts assume you have an SSH access to a node (server, EC2 instance) with fresh OS installed. 
+
+Currently tested OS is Ubuntu 13.10, see:  http://cloud-images.ubuntu.com/saucy/current/
+
 Usage:
 --------------
 
