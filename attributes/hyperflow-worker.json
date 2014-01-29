@@ -1,0 +1,14 @@
+{
+// set node attributes 
+//  "amqp_executor": {
+//    "AMQP_URL" : "amqp://login:password@host:5672/vhost",
+//    "AWS_ACCESS_KEY_ID" : "XXXXXXXXXXX",
+//    "AWS_SECRET_ACCESS_KEY" : "YYYYYYYYYYYYYYYYYYYYYYYYYY"
+//  },
+// include recipes in the runlist
+	"run_list": [ 
+		"recipe[workflows::montage]", 
+		"recipe[workflows::amqp-executor]"
+	]
+}
+

@@ -1,8 +1,18 @@
 #!/bin/bash
 
 # This runs as root on the server
+# Do not run locally!
+
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: ./install.sh [attributes_file.json]"
+    exit -1
+fi
+
+attributes_file=$1
 
 chef_binary=/usr/bin/chef-solo
+
 
 # Are we on a vanilla system?
 if ! test -f "$chef_binary"; then
@@ -15,4 +25,4 @@ if ! test -f "$chef_binary"; then
     curl -L https://www.opscode.com/chef/install.sh | sudo bash
 fi &&
 
-"$chef_binary" -c solo.rb -j solo.json
+"$chef_binary" -c solo.rb -j "$attributes_file"
