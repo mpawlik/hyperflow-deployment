@@ -1,10 +1,11 @@
 package 'redis-server' 
+package 'unzip'
  
 include_recipe "nodejs::default"
 
 
 tarball = "v1.0.0-beta-5.zip"
-hyperflow_dir="/home/ubuntu/hyperflow-1.0.0-beta-5"
+hyperflow_dir="/usr/local/hyperflow-1.0.0-beta-5"
 
 remote_file "/tmp/#{tarball}" do
  source "https://github.com/dice-cyfronet/hyperflow/archive/#{tarball}"
@@ -12,7 +13,7 @@ remote_file "/tmp/#{tarball}" do
 end
 
 execute "unzip" do
- cwd "/home/ubuntu"
+ cwd "/usr/local"
  command "unzip /tmp/#{tarball}"
  creates hyperflow_dir
  action :run

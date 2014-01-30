@@ -25,4 +25,6 @@ if ! test -f "$chef_binary"; then
     curl -L https://www.opscode.com/chef/install.sh | sudo bash
 fi &&
 
-"$chef_binary" -c solo.rb -j "$attributes_file"
+echo "Running chef-solo..."
+
+"$chef_binary" -l debug -c solo.rb -j "$attributes_file"

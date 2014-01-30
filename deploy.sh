@@ -11,7 +11,7 @@ attributes_file=$1
 host=$2
 
 
-tar cj . | ssh -o 'StrictHostKeyChecking no' "$host" "
+tar cj . | ssh -t -o 'StrictHostKeyChecking no' "$host" "
 sudo rm -rf ~/chef &&
 mkdir ~/chef &&
 cd ~/chef &&

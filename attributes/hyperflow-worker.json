@@ -7,8 +7,11 @@
 //  },
 // include recipes in the runlist
 	"run_list": [ 
-		"recipe[workflows::montage]", 
-		"recipe[workflows::amqp-executor]"
+//		"recipe[workflows::montage]", 
+		"recipe[workflows::molecular_docking]", 
+		"recipe[workflows::povray]", 
+		"recipe[workflows::amqp-executor]",
+		"recipe[workflows::lighttpd]" 
 	]
 }
 

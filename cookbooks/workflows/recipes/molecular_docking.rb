@@ -11,41 +11,51 @@ package 'autoconf'
 package 'automake'
 
 
-tarball = "povray-3.6.tar.gz"
-povray_dir="povray-3.6.1"
+# create paasage user
 
-remote_file "/tmp/#{tarball}" do
- source "http://www.povray.org/redirect/www.povray.org/ftp/pub/povray/Old-Versions/Official-3.62/Unix/#{tarball}"
+user "paasage" do
+  supports :manage_home => true
+  comment "PaaSage User"
+  gid "users"
+  home "/home/paasage"
+  shell "/bin/bash"
+end
+
+# Install Molecular Docking from source
+
+md_tarball = "Molecular_Docking.tar.gz"
+md_dir="/home/paasage/Molecular_Docking"
+
+remote_file "/home/paasage/#{md_tarball}" do
+ source "https://dl.dropboxusercontent.com/s/r4sqm2wt04a5ysj/#{md_tarball}"
  action :create_if_missing 
 end
 
 execute "tar" do
- command "tar zxv --no-same-owner --no-same-permissions -f /tmp/#{tarball}"
- creates "povray-3.6.1"
+ cwd "/home/paasage"
+ command "tar zxv --no-same-owner --no-same-permissions -f /home/paasage/#{md_tarball}"
+ creates md_dir
  action :run
 end
 
-execute "configure" do
-  not_if "test -f #{povray_dir}/Makefile"
-  cwd povray_dir
-  command './configure COMPILED_BY="your name <email@address>"'
+execute "compile" do
+  not_if "test -f #{md_dir}/src/cmd"
+  cwd md_dir
+  command "./compile.sh"
   action :run
 end
 
-execute "make" do
-  not_if "test -f #{povray_dir}/unix/povray"
-  cwd povray_dir
-  command "make"
-  action :run
+# Install scripts into /home/paasage
+
+remote_file "/home/paasage/script.tgz" do
+ source "https://dl.dropboxusercontent.com/s/taj1d832plk0gkm/script.tgz"
+ action :create_if_missing 
 end
 
-
-execute "make install" do
-  not_if "test -f /usr/local/bin/povray"
-  cwd povray_dir
-  command "make install"
-  action :run
+execute "tar" do
+ cwd "/home/paasage"
+ command "tar zxv --no-same-owner --no-same-permissions -f /home/paasage/script.tgz && chmod a+rx script/*.sh"
+ creates "/home/paasage/script"
+ action :run
 end
-
-
 
