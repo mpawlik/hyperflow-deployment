@@ -1,12 +1,10 @@
 {
-// set node attributes 
-
 // include recipes in the runlist
-	"run_list": [ 
-		"recipe[nodejs::default]", 
-		"recipe[rabbitmq::default]", 
-		"recipe[rabbitmq::mgmt_console]",
-		"recipe[workflows::hyperflow-engine]"   
-	]
+  "run_list": [ 
+    "recipe[apt]",    
+    "recipe[rabbitmq::default]", 
+    "recipe[rabbitmq::mgmt_console]",
+    "recipe[workflows::hyperflow-engine]"   
+  ]
 }
 

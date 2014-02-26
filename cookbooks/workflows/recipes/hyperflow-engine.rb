@@ -1,21 +1,29 @@
 package 'redis-server' 
 package 'unzip'
+
+include_recipe "nodejs"
+include_recipe "nodejs::npm"
+
  
-include_recipe "nodejs::default"
-
-
-tarball = "v1.0.0-beta-5.zip"
-hyperflow_dir="/usr/local/hyperflow-1.0.0-beta-5"
+version = 'master'
+tarball = "#{version}.tar.gz"
+hyperflow_dir="/usr/local/hyperflow"
 
 remote_file "/tmp/#{tarball}" do
  source "https://github.com/dice-cyfronet/hyperflow/archive/#{tarball}"
  action :create_if_missing 
 end
 
+directory hyperflow_dir do
+  owner "root"
+  group "root"
+  mode 00755
+  action :create
+end
+
 execute "unzip" do
- cwd "/usr/local"
- command "unzip /tmp/#{tarball}"
- creates hyperflow_dir
+ command "tar zxv --no-same-owner --no-same-permissions -f /tmp/#{tarball} --strip-components 1 -C #{hyperflow_dir}"
+ creates hyperflow_dir + '/package.json'
  action :run
 end
 

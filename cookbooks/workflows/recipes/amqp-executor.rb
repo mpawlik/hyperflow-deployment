@@ -1,9 +1,8 @@
 package 'build-essential' 
-package 'ruby2.0'
-package 'ruby2.0-dev'
+package 'ruby'
+package 'ruby-dev'
 package 'libxml2-dev'
 package 'libxslt-dev'
-
 
 remote_file "/tmp/hyperflow-amqp-executor.gem" do
  source "https://dl.dropboxusercontent.com/u/81819/hyperflow-amqp-executor.gem"
@@ -13,23 +12,28 @@ end
 
 gem_package "hyperflow-amqp-executor" do
   source "/tmp/hyperflow-amqp-executor.gem"
-  options("--no-ri --no-rdoc")
   action :install
 end
 
 # Create the credentials file
-template "/etc/amqp-executor-credentials" do
-    source "amqp-executor-credentials.erb"
-    owner "ubuntu"
-    group "ubuntu"
-    mode "0600"
-end
-
-# Create the credentials file
-cookbook_file "/var/lib/cloud/scripts/per-boot/start-executor.sh" do
-    source "start-executor.sh"
+template "/etc/hyperflow-amqp-executor.yml" do
+    source "config.yml.erb"
     owner "root"
     group "root"
-    mode "0755"
+    mode "0644"
 end
 
+service "hyperflow-amqp-executor" do
+  supports :restart => true, :start => true, :stop => true
+  action :nothing
+end 
+
+template "hyperflow-amqp-executor" do
+  path "/etc/init.d/hyperflow-amqp-executor"
+  source "hyperflow-amqp-executor.erb"
+  owner "root"
+  group "root"
+  mode "0755"
+  notifies :enable, "service[hyperflow-amqp-executor]"
+  notifies :start, "service[hyperflow-amqp-executor]"
+end
