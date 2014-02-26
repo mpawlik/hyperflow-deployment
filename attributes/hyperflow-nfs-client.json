@@ -1,0 +1,13 @@
+{
+// set node attributes 
+ "hyperflow": {
+   "nfs_host" : "10.100.8.51"
+ },
+
+// include recipes in the runlist
+	"run_list": [ 
+		"recipe[nfs]",
+		"recipe[workflows::nfs-client]"
+	]
+}
+

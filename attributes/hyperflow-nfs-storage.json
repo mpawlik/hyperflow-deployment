@@ -1,0 +1,10 @@
+{
+// set node attributes 
+
+// include recipes in the runlist
+	"run_list": [ 
+		"recipe[nfs::server]",
+		"recipe[workflows::nfs-server]"
+	]
+}
+
