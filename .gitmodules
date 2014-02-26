@@ -1,6 +1,6 @@
 [submodule "cookbooks/nodejs"]
 	path = cookbooks/nodejs
-	url = https://github.com/mdxp/nodejs-cookbook.git
+	url = https://github.com/bluespurs/nodejs-cookbook.git
 [submodule "cookbooks/yum"]
 	path = cookbooks/yum
 	url = https://github.com/opscode-cookbooks/yum.git
