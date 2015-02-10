@@ -1,6 +1,3 @@
-[submodule "cookbooks/nodejs"]
-	path = cookbooks/nodejs
-	url = https://github.com/bluespurs/nodejs-cookbook.git
 [submodule "cookbooks/yum"]
 	path = cookbooks/yum
 	url = https://github.com/opscode-cookbooks/yum.git
@@ -29,3 +26,9 @@
 	path = cookbooks/nfs
 	url = https://github.com/EndPointCorp/cookbook-nfs.git
 	branch = saucy_upstart
+[submodule "cookbooks/nodejs"]
+	path = cookbooks/nodejs
+	url = https://github.com/redguide/nodejs.git
+[submodule "cookbooks/ark"]
+	path = cookbooks/ark
+	url = https://github.com/burtlo/ark.git
