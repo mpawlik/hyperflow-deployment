@@ -3,6 +3,7 @@ package 'ruby'
 package 'ruby-dev'
 package 'libxml2-dev'
 package 'libxslt-dev'
+package 'zlib1g-dev'
 
 remote_file "/tmp/hyperflow-amqp-executor.gem" do
  source "https://dl.dropboxusercontent.com/u/81819/hyperflow-amqp-executor.gem"
