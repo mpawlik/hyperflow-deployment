@@ -18,7 +18,7 @@ Assumptions:
 
 These scripts assume you have an SSH access to a node (server, EC2 instance) with fresh OS installed. 
 
-Currently tested OS is Ubuntu 13.10, see:  http://cloud-images.ubuntu.com/saucy/current/
+Currently tested OS is Ubuntu 14.04, see:  http://cloud-images.ubuntu.com/trusty/current/
 
 Usage:
 --------------
