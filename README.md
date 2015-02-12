@@ -47,6 +47,10 @@ On Ubuntu 14.04:
 
 `sudo bash install.sh attributes/hyperflow-onenode.json`
 
+Or a one-liner: 
+
+`sudo apt-get install git && git clone --recursive https://github.com/malawski/hyperflow-deployment.git && cd hyperflow-deployment/ && sudo bash install.sh attributes/hyperflow-onenode.json`
+
 Usage example:
 --------------
 
