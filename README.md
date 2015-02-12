@@ -62,5 +62,16 @@ To deploy the hyperflow worker node with AMQP executor and montage binaries:
 
 `./deploy.sh attributes/hyperflow-worker.json ubuntu@ec2-54-220-39-15.eu-west-1.compute.amazonaws.com`
 
+To deploy the hyperflow engine with MD Application:
+
+`./deploy.sh attributes/hyperflow-md-worker.json ubuntu@ec2-54-220-39-15.eu-west-1.compute.amazonaws.com`
+
+To run the MD workflow:
+
+```
+ssh ubuntu@ec2-54-220-39-15.eu-west-1.compute.amazonaws.com
+cd MolecularDynamicsParameterStudy/
+/node_modules/hyperflow/bin/hflow run md_1.json
+'''
 
 See tutorial of chef-solo at: http://www.opinionatedprogrammer.com/2011/06/chef-solo-tutorial-managing-a-single-server-with-chef/
