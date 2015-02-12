@@ -23,7 +23,7 @@ Currently tested OS is Ubuntu 13.10, see:  http://cloud-images.ubuntu.com/saucy/
 Usage:
 --------------
 
-Run from your laptop:
+Option 1: Run from your laptop:
 
 `./deploy.sh [attributes_file.json] [<user@>host]`
 
@@ -34,6 +34,15 @@ Run from your laptop:
 See examples of these configuration files at `attributes` directory.
 
 Edit attribute values to set `AMQP_URL`, `AWS_ACCESS_KEY_ID` or `AWS_SECRET_ACCESS_KEY` for the AMQP executor.
+
+Option 2: Run on the node:
+
+On Ubuntu 14.04:
+
+`sudo apt-get install git`
+`git clone --recursive https://github.com/malawski/hyperflow-deployment.git`
+`cd hyperflow-deployment/`
+`sudo bash install.sh attributes/hyperflow-onenode.json`
 
 Usage example:
 --------------
