@@ -23,7 +23,7 @@ Currently tested OS is Ubuntu 14.04, see:  http://cloud-images.ubuntu.com/trusty
 Usage:
 --------------
 
-Option 1: Run from your laptop:
+*Option 1*: Run from your laptop:
 
 `./deploy.sh [attributes_file.json] [<user@>host]`
 
@@ -35,7 +35,7 @@ See examples of these configuration files at `attributes` directory.
 
 Edit attribute values to set `AMQP_URL`, `AWS_ACCESS_KEY_ID` or `AWS_SECRET_ACCESS_KEY` for the AMQP executor.
 
-Option 2: Run on the node:
+*Option 2*: Run on the node:
 
 On Ubuntu 14.04:
 
