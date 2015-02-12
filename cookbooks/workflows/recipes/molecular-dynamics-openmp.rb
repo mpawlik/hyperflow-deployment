@@ -10,7 +10,7 @@ md_dir="/home/ubuntu/MD_v4_OMP"
 
 
 remote_file "/home/ubuntu/#{md_tarball}" do
- source "https://www.dropbox.com/s/alho0mwrg4dg45b/#{md_tarball}"
+ source "https://dl.dropboxusercontent.com/s/alho0mwrg4dg45b/#{md_tarball}"
  action :create_if_missing 
 end
 
