@@ -6,6 +6,8 @@
   },
   "run_list": [ 
     "recipe[apt]",
+    "recipe[nodejs]",
+    "recipe[nodejs::npm]", 
     "recipe[workflows::hyperflow-engine]",
     "recipe[workflows::amqp-executor]",
     "recipe[workflows::povray]",
