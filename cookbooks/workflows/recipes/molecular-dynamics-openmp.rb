@@ -30,6 +30,7 @@ end
 
 bash "copy" do
   not_if "test -f #{scripts_dir}/src/main"
+  user "ubuntu"
   cwd "/home/ubuntu"
   code <<-EOH
   cp -r /node_modules/hyperflow/examples/MolecularDynamicsParameterStudy/ .
