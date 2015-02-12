@@ -1,7 +1,9 @@
 {
 // include recipes in the runlist
   "run_list": [ 
-    "recipe[apt]",    
+    "recipe[apt]", 
+    "recipe[nodejs]",
+    "recipe[nodejs::npm]", 
     "recipe[rabbitmq::default]", 
     "recipe[rabbitmq::mgmt_console]",
     "recipe[workflows::hyperflow-engine]"   
