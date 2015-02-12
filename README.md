@@ -72,6 +72,6 @@ To run the MD workflow:
 ssh ubuntu@ec2-54-220-39-15.eu-west-1.compute.amazonaws.com
 cd MolecularDynamicsParameterStudy/
 /node_modules/hyperflow/bin/hflow run md_1.json
-'''
+```
 
 See tutorial of chef-solo at: http://www.opinionatedprogrammer.com/2011/06/chef-solo-tutorial-managing-a-single-server-with-chef/
