@@ -8,6 +8,7 @@
     "recipe[apt]",
     "recipe[workflows::hyperflow-engine]",
     "recipe[workflows::amqp-executor]",
+    "recipe[workflows::povray]",
     "recipe[workflows::molecular-dynamics-openmp]"
   ]
 }
