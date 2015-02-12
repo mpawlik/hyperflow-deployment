@@ -39,7 +39,7 @@ Edit attribute values to set `AMQP_URL`, `AWS_ACCESS_KEY_ID` or `AWS_SECRET_ACCE
 
 On Ubuntu 14.04:
 
-`sudo apt-get install git`
+`sudo apt-get -y install git`
 
 `git clone --recursive https://github.com/malawski/hyperflow-deployment.git`
 
@@ -49,7 +49,7 @@ On Ubuntu 14.04:
 
 Or a one-liner: 
 
-`sudo apt-get install git && git clone --recursive https://github.com/malawski/hyperflow-deployment.git && cd hyperflow-deployment/ && sudo bash install.sh attributes/hyperflow-onenode.json`
+`sudo apt-get -y install git && git clone --recursive https://github.com/malawski/hyperflow-deployment.git && cd hyperflow-deployment/ && sudo bash install.sh attributes/hyperflow-onenode.json`
 
 Usage example:
 --------------
