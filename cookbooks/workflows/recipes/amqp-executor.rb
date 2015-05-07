@@ -5,14 +5,8 @@ package 'libxml2-dev'
 package 'libxslt-dev'
 package 'zlib1g-dev'
 
-remote_file "/tmp/hyperflow-amqp-executor.gem" do
- source "https://dl.dropboxusercontent.com/u/81819/hyperflow-amqp-executor.gem"
- action :create_if_missing 
-end
-
 
 gem_package "hyperflow-amqp-executor" do
-  source "/tmp/hyperflow-amqp-executor.gem"
   action :install
 end
 

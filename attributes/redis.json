@@ -1,0 +1,8 @@
+{
+// include recipes in the runlist
+  "run_list": [ 
+    "recipe[apt]", 
+    "recipe[workflows::redis]"   
+  ]
+}
+
