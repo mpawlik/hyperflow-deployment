@@ -87,5 +87,9 @@ sudo gem install pry
 
 Add `require "erb"` to /var/lib/gems/1.9.1/gems/hyperflow-amqp-executor-1.0.0/lib/hyperflow-amqp-executor/settings.rb
 
+Restart the daemon:
+
+`sudo THREADS=1 AMQP_URL=amqp://52.17.90.218 AWS_ACCESS_KEY_ID=AKIXXXXXXXXXXXXX AWS_SECRET_ACCESS_KEY=YYYYYYYYYYYYYYYYYYYYYYYYYYYYY /etc/init.d/hyperflow-amqp-executor restart`
+
 
 See tutorial of chef-solo at: http://www.opinionatedprogrammer.com/2011/06/chef-solo-tutorial-managing-a-single-server-with-chef/
