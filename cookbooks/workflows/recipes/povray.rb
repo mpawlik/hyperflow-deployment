@@ -28,7 +28,7 @@ end
 execute "configure" do
   not_if "test -f #{povray_dir}/Makefile"
   cwd povray_dir
-  command './configure COMPILED_BY="your name <email@address>"'
+  command './configure --prefix=/usr COMPILED_BY="your name <email@address>"'
   action :run
 end
 
