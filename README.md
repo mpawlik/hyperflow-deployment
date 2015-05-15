@@ -74,4 +74,10 @@ cd MolecularDynamicsParameterStudy/
 /node_modules/hyperflow/bin/hflow run md_1.json
 ```
 
+Usage example: Molecular Dynamics with AMQP Executor 
+--------------
+
+`sudo apt-get -y install git && git clone --recursive https://github.com/malawski/hyperflow-deployment.git && cd hyperflow-deployment/ && sudo bash install.sh attributes/executor.json`
+
+
 See tutorial of chef-solo at: http://www.opinionatedprogrammer.com/2011/06/chef-solo-tutorial-managing-a-single-server-with-chef/
