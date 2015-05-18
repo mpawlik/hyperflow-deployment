@@ -82,10 +82,7 @@ On a fresh Amazon Ubuntu 14.04:
 ```
 sudo apt-get -y install git && git clone --recursive https://github.com/malawski/hyperflow-deployment.git && cd hyperflow-deployment/ && sudo bash install.sh attributes/executor.json
 cd hyperflow-deployment/ && sudo bash install.sh attributes/md.json
-sudo gem install pry
 ```
-
-Add `require "erb"` to /var/lib/gems/1.9.1/gems/hyperflow-amqp-executor-1.0.0/lib/hyperflow-amqp-executor/settings.rb
 
 Restart the daemon:
 
