@@ -20,6 +20,13 @@ end
 
 service "hyperflow-amqp-executor" do
   supports :restart => true, :start => true, :stop => true
+  if node['paasage_services']['enable'] == false
+    action [ :stop, :disable ]
+  else
+    action [ :start, :enable ]
+  end
+end
+  
   action :nothing
 end 
 
