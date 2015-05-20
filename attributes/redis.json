@@ -1,5 +1,5 @@
 {
-// include recipes in the runlist
+  "paasage_services": { "enable": false},
   "run_list": [ 
     "recipe[apt]", 
     "recipe[workflows::redis]"   
