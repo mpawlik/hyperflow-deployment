@@ -4,6 +4,7 @@
     "recipe[apt]", 
     "recipe[nodejs]",
     "recipe[nodejs::npm]", 
+    "recipe[workflows::redis]",   
     "recipe[rabbitmq::default]", 
     "recipe[rabbitmq::mgmt_console]",
     "recipe[workflows::hyperflow-engine]"   
