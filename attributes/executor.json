@@ -1,4 +1,5 @@
 {
+  "paasage_services": { "enable": false},
   "apt": {"compiletime": true},
   "amqp_executor": {
     "AMQP_URL": "amqp://localhost",
