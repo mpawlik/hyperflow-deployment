@@ -1,5 +1,7 @@
 package 'redis-server' 
 
 service "redis-server" do
-  action [ :stop, :disable ]
+  if node['paasage_services']['enable'] == false do
+    action [ :stop, :disable ]
+  end
 end
