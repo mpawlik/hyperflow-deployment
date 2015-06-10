@@ -26,9 +26,7 @@ service "hyperflow-amqp-executor" do
     action [ :start, :enable ]
   end
 end
-  
-  action :nothing
-end 
+
 
 template "hyperflow-amqp-executor" do
   path "/etc/init.d/hyperflow-amqp-executor"
