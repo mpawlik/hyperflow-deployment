@@ -1,0 +1,10 @@
+{
+// include recipes in the runlist
+  "run_list": [ 
+    "recipe[apt]", 
+    "recipe[nodejs]",
+    "recipe[nodejs::npm]", 
+    "recipe[workflows::hyperflow-monitoring-plugin]"
+  ]
+}
+
