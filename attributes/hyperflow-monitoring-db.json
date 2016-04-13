@@ -1,8 +1,9 @@
 {
-// include recipes in the runlist
-  "run_list": [ 
+
+  "run_list": [
     "recipe[apt]", 
-    "recipe[influxdb::default]"
+    "recipe[influxdb::default]",
+    "recipe[workflows::hyperflow-monitoring-db]"
   ]
 }
 
