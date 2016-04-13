@@ -1,9 +1,12 @@
 {
-// include recipes in the runlist
-  "run_list": [ 
-    "recipe[apt]", 
+  "monitoring-plugin": {
+    "METRIC_COLLECTOR_TYPE": "influxdb",
+    "METRIC_COLLECTOR": "http://localhost:8086/write?db=hyperflow"
+  },
+  "run_list": [
+    "recipe[apt]",
     "recipe[nodejs]",
-    "recipe[nodejs::npm]", 
+    "recipe[nodejs::npm]",
     "recipe[workflows::hyperflow-monitoring-plugin]"
   ]
 }
