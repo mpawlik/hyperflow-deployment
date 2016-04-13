@@ -35,9 +35,6 @@
 [submodule "cookbooks/chef-influxdb"]
 	path = cookbooks/chef-influxdb
 	url = https://github.com/bdangit/chef-influxdb
-[submodule "cookbooks/chef-handler-influxdb"]
-	path = cookbooks/chef-handler-influxdb
-	url = https://github.com/jakedavis/chef-handler-influxdb
 [submodule "cookbooks/chef_handler"]
 	path = cookbooks/chef_handler
 	url = https://github.com/chef-cookbooks/chef_handler
