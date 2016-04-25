@@ -41,3 +41,6 @@
 [submodule "cookbooks/compat_resource"]
 	path = cookbooks/compat_resource
 	url = https://github.com/chef-cookbooks/compat_resource
+[submodule "cookbooks/chef-grafana"]
+	path = cookbooks/chef-grafana
+	url = https://github.com/chef-cookbooks/chef-grafana

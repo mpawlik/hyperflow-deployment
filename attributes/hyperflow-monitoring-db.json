@@ -3,7 +3,8 @@
   "run_list": [
     "recipe[apt]", 
     "recipe[influxdb::default]",
-    "recipe[workflows::hyperflow-monitoring-db]"
+    "recipe[workflows::hyperflow-monitoring-db]",
+    "recipe[chef-grafana::install]"
   ]
 }
 
