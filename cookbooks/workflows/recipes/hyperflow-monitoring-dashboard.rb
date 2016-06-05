@@ -17,6 +17,12 @@ datasource = {
     isDefault: true
 }
 
+execute 'make sure grafana is up' do
+  command '/usr/bin/curl ' + dashboard_api_url
+  retries 10
+  retry_delay 2
+end
+
 execute 'create_datasource' do
   command '/usr/bin/curl ' + dashboard_api_url + ' -X POST -H "Content-Type: application/json;charset=UTF-8" --data-binary \'' + JSON.generate(datasource) +  '\''
 end
