@@ -1,0 +1,12 @@
+{
+  "apt": {"compiletime": true},
+  "amqp_executor": {
+    "AMQP_URL": "amqp://localhost",
+    "STORAGE":"local"
+  },
+  "run_list": [
+    "recipe[workflows::hyperflow-engine]",
+    "recipe[workflows::amqp-executor]",
+    "recipe[workflows::molecular-dynamics-openmp]"
+  ]
+}

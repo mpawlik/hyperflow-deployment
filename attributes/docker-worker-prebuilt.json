@@ -1,0 +1,14 @@
+
+{
+  "apt": {"compiletime": true},
+  "amqp_executor": {
+    "AMQP_URL": "amqp://localhost",
+    "STORAGE":"local"
+  },
+  "run_list": [ 
+    "recipe[apt]",
+    "recipe[nodejs]",
+    "recipe[nodejs::npm]",
+    "recipe[workflows::povray]"
+  ]
+}
