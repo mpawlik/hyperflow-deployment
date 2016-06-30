@@ -22,7 +22,7 @@ if ! test -f "$chef_binary"; then
     #apt-get -o Dpkg::Options::="--force-confnew" \
     #    --force-yes -fuy dist-upgrade &&
     # Install  Chef
-    curl -L https://www.opscode.com/chef/install.sh | sudo bash
+    curl -L https://omnitruck.chef.io/install.sh | sudo bash -s -- -v 12.10.24
 fi &&
 
 echo "Running chef-solo..."
