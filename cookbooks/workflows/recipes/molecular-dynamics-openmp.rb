@@ -1,25 +1,32 @@
-package 'gcc' 
-package 'build-essential' 
+package 'gcc'
+package 'git'
+package 'build-essential'
 
 
 
 # Install Molecular Dynamics OpenMP version from source
 
 md_tarball = "MD_v4_OMP.tar.gz"
-md_dir="/home/ubuntu/MD_v4_OMP"
-scripts_dir="/home/ubuntu/MolecularDynamicsParameterStudy"
+md_dir="/MD_v4_OMP"
+scripts_dir="/MolecularDynamicsParameterStudy"
 
-remote_file "/home/ubuntu/#{md_tarball}" do
- source "https://dl.dropboxusercontent.com/s/alho0mwrg4dg45b/#{md_tarball}"
- action :create_if_missing 
+git "/#{md_dir}" do
+  repository "https://github.com/hopped/molecular-dynamics-simulation"
+  reference "master"
+  action :sync
 end
 
-execute "tar" do
- cwd "/home/ubuntu"
- command "tar zxv --no-same-owner --no-same-permissions -f /home/ubuntu/#{md_tarball}"
- creates md_dir
- action :run
-end
+#remote_file "/#{md_tarball}" do
+# source "https://dl.dropboxusercontent.com/s/alho0mwrg4dg45b/#{md_tarball}"
+# action :create_if_missing
+#end
+
+#execute "tar" do
+# cwd "/"
+# command "tar zxv --no-same-owner --no-same-permissions -f /#{md_tarball}"
+# creates md_dir
+# action :run
+#end
 
 execute "compile" do
   not_if "test -f #{md_dir}/src/main"
@@ -30,8 +37,7 @@ end
 
 bash "copy" do
   not_if "test -f #{scripts_dir}/src/main"
-  user "ubuntu"
-  cwd "/home/ubuntu"
+  cwd "/"
   code <<-EOH
   cp -r /node_modules/hyperflow/examples/MolecularDynamicsParameterStudy/ .
   mkdir #{scripts_dir}/src
