@@ -22,3 +22,5 @@ RUN bash install.sh
 WORKDIR "/root"
 RUN gem install mime-types
 
+RUN apt-get clean
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
