@@ -1,0 +1,17 @@
+version: '2'
+services:
+  master:
+    build: ./master
+    ports:
+     - "8080:51483"
+     - "51404:51404"
+
+  worker:
+    build: ./worker
+    command: dockerize -wait http://master:51483 -timeout 999s /hyperflow-deployment/scripts/worker/start.sh
+    depends_on:
+     - master
+    links:
+     - master
+    volumes:
+     - ./data:/tmp
