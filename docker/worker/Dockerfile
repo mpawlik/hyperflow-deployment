@@ -11,7 +11,7 @@ RUN git checkout develop
 RUN git pull
 
 WORKDIR "/hyperflow-deployment/scripts/worker"
-RUN bash install.sh
+RUN bash install.sh $AWS_ACCESS_KEY_ID $AWS_SECRET_ACCESS_KEY
 
 WORKDIR "/hyperflow-deployment"
 RUN bash install.sh attributes/amqp-executor-template.json
