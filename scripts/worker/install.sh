@@ -47,4 +47,5 @@ if [ -n "${DOCKER_TESTING}" ]; then
   echo "nothing to do"
 else
   bash install.sh attributes/hyperflow-md-worker.json
+  gem install mime-types
 fi
