@@ -12,7 +12,8 @@ threads: <%= '<%= Executor::cpu_count' %> %>
 
 <% if node['amqp_executor']['STORAGE'].nil? or node['amqp_executor']['STORAGE'] == 'cloud' %> 
 cloud_storage:
-  provider: AWS
-  aws_access_key_id:        <%= node['amqp_executor']['AWS_ACCESS_KEY_ID'] %>
-  aws_secret_access_key:    <%= node['amqp_executor']['AWS_SECRET_ACCESS_KEY'] %>
+  :provider: AWS
+  :region:                   <%= node['amqp_executor']['AWS_REGION'] %>
+  :aws_access_key_id:        <%= node['amqp_executor']['AWS_ACCESS_KEY_ID'] %>
+  :aws_secret_access_key:    <%= node['amqp_executor']['AWS_SECRET_ACCESS_KEY'] %>
 <% end %>

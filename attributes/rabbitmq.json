@@ -3,7 +3,7 @@
   "run_list": [ 
     "recipe[apt]", 
     "recipe[rabbitmq::default]", 
-    "recipe[rabbitmq::mgmt_console]",
+    "recipe[rabbitmq::mgmt_console]"
   ]
 }
 
