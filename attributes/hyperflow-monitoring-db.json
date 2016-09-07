@@ -1,0 +1,20 @@
+{
+  "chef-grafana": {
+    "config": {
+      "auth.anonymous": {
+        "enabled": true
+      }
+    }
+  },
+  "hyperflow-monitoring-dashboard": {
+    "home_dashboard": "hyperflow-home.json"
+  },
+  "run_list": [
+    "recipe[apt]",
+    "recipe[influxdb::default]",
+    "recipe[workflows::hyperflow-monitoring-db]",
+    "recipe[chef-grafana::install]",
+    "recipe[chef-grafana::configure]",
+    "recipe[workflows::hyperflow-monitoring-dashboard]"
+  ]
+}
