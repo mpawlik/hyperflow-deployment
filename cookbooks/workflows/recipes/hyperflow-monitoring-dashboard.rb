@@ -19,8 +19,8 @@ datasource = {
 
 execute 'make sure grafana is up' do
   command '/usr/bin/curl ' + dashboard_api_url
-  retries 10
-  retry_delay 2
+  retries 20
+  retry_delay 5
 end
 
 execute 'create_datasource' do
