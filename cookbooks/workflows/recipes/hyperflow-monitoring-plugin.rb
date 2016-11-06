@@ -3,7 +3,7 @@ package 'unzip'
 
 
 execute "install hyperflow monitoring plugin" do
-  command "npm install https://github.com/dice-cyfronet/hyperflow-monitoring-plugin/archive/feature/visor_integration.zip"
+  command "npm install https://github.com/dice-cyfronet/hyperflow-monitoring-plugin/archive/feature/visor_integration.tar.gz"
 end
 
 template "/node_modules/hyperflow-monitoring-plugin/hyperflowMonitoringPlugin.config.js" do
