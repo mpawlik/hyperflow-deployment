@@ -1,6 +1,6 @@
 {
   "monitoring-plugin": {
-    "METRIC_COLLECTOR_TYPE": "influxdb",
+    "METRIC_COLLECTOR_TYPE": "visor",
     "METRIC_COLLECTOR": "http://localhost:8086/write?db=hyperflow"
   },
   "run_list": [
